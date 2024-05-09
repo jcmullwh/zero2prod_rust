@@ -93,13 +93,13 @@ jobs:
         run: sccache --start-server
       - name: Rustfmt
         run: cargo fmt --all -- --check
-      - name: Clippy
-        if: matrix.clippy == true
-        run: cargo clippy --all-targets --all-features -- -D warnings
       - name: Build
         run: cargo build --verbose
       - name: Run tests
         run: cargo test --verbose
+      - name: Clippy
+        if: matrix.clippy == true
+        run: cargo clippy --all-targets --all-features -- -D warnings
       - name: Install Tarpaulin
         if: matrix.tarpaulin == true
         run: cargo install cargo-tarpaulin
