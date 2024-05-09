@@ -62,6 +62,7 @@ jobs:
             echo "Error extracting sccache."
             exit 1
           fi
+          ls -lah
           mv -f $SCCACHE_FILE/sccache $HOME/.local/bin/sccache
           echo "$HOME/.local/bin" >> $GITHUB_PATH          
       - name: Install sccache (macos-latest)
