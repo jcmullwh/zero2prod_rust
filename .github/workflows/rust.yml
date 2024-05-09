@@ -62,7 +62,7 @@ jobs:
             echo "Error extracting sccache."
             exit 1
           fi
-          ls -lah
+          ls -lah sccache-dist-v0.8.0-x86_64-unknown-linux-musl/
           mv -f $SCCACHE_FILE/sccache $HOME/.local/bin/sccache
           echo "$HOME/.local/bin" >> $GITHUB_PATH          
       - name: Install sccache (macos-latest)
